@@ -7,6 +7,7 @@ const Dashboard = lazy(() => import('@app/modules/Dashboard/Dashboard'));
 const ResourceManagement = lazy(() => import('@app/modules/ResourceManagement/ResourceManagement'));
 const ProjectManagement = lazy(() => import('@app/modules/ProjectManagement/ProjectManagement'));
 const RoasterManagement = lazy(() => import('@app/modules/RoasterManagement/RoasterManagement'));
+const SkillsManagement = lazy(() => import('@app/modules/SkillsManagement/SkillsManagement'));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -18,6 +19,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/resource-management" component={ResourceManagement} exact />
           <Route path="/project-management" component={ProjectManagement} exact />
           <Route path="/roaster-management" component={RoasterManagement} />
+          <Route path="/skills-management" component={SkillsManagement} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </React.Suspense>
     </Router>
