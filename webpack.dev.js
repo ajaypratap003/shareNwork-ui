@@ -31,7 +31,7 @@ module.exports = merge(common('development'), {
     rules: [
       {
         test: /\.css$/,
-        include: [...stylePaths],
+        // include: [...stylePaths],
         use: ['style-loader', 'css-loader'],
       },
     ],

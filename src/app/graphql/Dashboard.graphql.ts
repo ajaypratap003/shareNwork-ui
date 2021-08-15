@@ -7,3 +7,11 @@ query getEmployees {
      firstName
     }      
 }`;
+
+export const  getSkills= gql`
+query skills {  
+    skill{
+        id,
+        name
+    }     
+}`;

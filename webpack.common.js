@@ -22,27 +22,37 @@ module.exports = env => {
             }
           ]
         },
-        {
-          test: /\.(svg|ttf|eot|woff|woff2)$/,
-          // only process modules with this loader
-          // if they live under a 'fonts' or 'pficon' directory
-          include: [
-            path.resolve(__dirname, 'node_modules/patternfly/dist/fonts'),
-            path.resolve(__dirname, 'node_modules/@patternfly/react-core/dist/styles/assets/fonts'),
-            path.resolve(__dirname, 'node_modules/@patternfly/react-core/dist/styles/assets/pficon'),
-            path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/fonts'),
-            path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/pficon')
-          ],
-          use: {
-            loader: 'file-loader',
-            options: {
-              // Limit at 50k. larger files emited into separate files
-              limit: 5000,
-              outputPath: 'fonts',
-              name: '[name].[ext]',
-            }
-          }
-        },
+        // {
+        //   test: /\.(svg|ttf|eot|woff|woff2)$/,
+        //   // only process modules with this loader
+        //   // if they live under a 'fonts' or 'pficon' directory
+        //   // include: [
+        //   //   path.resolve(__dirname, 'node_modules/patternfly/dist/fonts'),
+        //   //   path.resolve(__dirname, 'node_modules/@patternfly/react-core/dist/styles/assets/fonts'),
+        //   //   path.resolve(__dirname, 'node_modules/@patternfly/react-core/dist/styles/assets/pficon'),
+        //   //   path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/fonts'),
+        //   //   path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/pficon')
+        //   // ],
+        //   use: {
+        //     loader: 'file-loader',
+        //     options: {
+        //       // Limit at 50k. larger files emited into separate files
+        //       limit: 5000,
+        //       outputPath: 'fonts',
+        //       name: '[name].[ext]',
+        //     }
+        //   }
+        // },
+        // {
+        //   test: /\.(ttf|eot|woff|woff2)$/,
+        //   use: {
+        //     loader: 'file-loader',
+        //     options: {
+        //       limit: 5000,
+        //       name: '[name].[ext]',
+        //     }
+        //   }
+        // },
         {
           test: /\.svg$/,
           include: input => input.indexOf('background-filter.svg') > 1,

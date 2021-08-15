@@ -1,0 +1,7 @@
+.ins-c-sources__checkbox-with-icon {
+  display: flex;
+}
+.ins-c-sources__checkbox-with-icon .pf-c-popover {
+  visibility: initial;
+  pointer-events: initial;
+}

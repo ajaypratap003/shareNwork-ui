@@ -1,0 +1,113 @@
+{
+  "title": "Add Resource",
+  "fields": [
+    {
+      "name": "layout",
+      "component": "column-layout",
+      "size": "2",
+      "fields": [
+        {
+          "component": "text-field",
+          "elementId": "empLName",
+          "name": "fname",
+          "label": "First Name",
+          "helperText": "",
+          "isRequired": true,
+          "validate": [{ "type": "required", "message": "This field is reuired" }]
+        },
+        {
+          "component": "text-field",
+          "elementId": "empFName",
+          "name": "lname",
+          "label": "Last Name",
+          "helperText": "",
+          "isRequired": true,
+          "validate": [{ "type": "required" }]
+        }
+      ]
+    },
+    {
+      "component": "text-field",
+      "name": "email",
+      "label": "Email",
+      "helperText": "",
+      "isRequired": true,
+      "validate": [
+        { "type": "required" },
+        {
+          "type": "pattern",
+          "pattern": "[a-zA-Z0-9]+@[a-zA-Z0-9]+.[A-Za-z]+$",
+          "message": "Enter valid email id"
+        }
+      ]
+    },
+    {
+      "component": "file-upload",
+      "elementId": "empPhoto",
+      "name": "photo",
+      "label": "Picture",
+      "helperText": "",
+      "isRequired": true,
+      "validate": [
+        {
+          "type": "required"
+        },
+        { "type": "file-size", "maxSize": 900000 }
+      ]
+    },
+    {
+      "component": "select",
+      "name": "skill",
+      "label": "Skills",
+      "isMulti": true,
+      "isRequired": true,
+      "validate": [
+        { "type": "required" },
+        { "type": "min-items", "threshold": 3, "message": "Select at least 3 skills" }
+      ],
+      "actions": {
+        "resolveProps": ["loadOptions"]
+      }
+    },
+    {
+      "component": "radio",
+      "name": "gender",
+      "isRequired": true,
+      "validate": [{ "type": "required" }],
+      "label": "Gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": "male"
+        },
+        {
+          "label": "Female",
+          "value": "female"
+        },
+        {
+          "label": "Other",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "component": "text-field",
+      "name": "otherGender",
+      "label": "Other Gender",
+      "helperText": "",
+      "isRequired": true,
+      "validate": [{ "type": "required" }],
+      "condition": {
+        "when": "gender",
+        "is": "other"
+      }
+    },
+    {
+      "component": "switch",
+      "name": "terms",
+      "label": "Accept terms & conditions",
+      "isRequired": true,
+      "validate": [{ "type": "required" }]
+    }
+  ]
+}
